@@ -58,7 +58,7 @@ with overview:
 	# Expander to show the dataset
 	with st.expander('See the dataset', icon=':material/table:'):
 		st.caption('''
-            The dataset contains information about COVID-19 cases, vaccinations, and deaths across different countries,6
+            The dataset contains information about COVID-19 cases, vaccinations, and deaths across different countries,
             along with other related metrics like hospitalization rates and policy stringency.
             ''')
 		# Show user selected table
@@ -80,14 +80,12 @@ with notebook:
 	components.html(nb_html, height=9200, scrolling=True)
 	st.divider()
 	# Button to download the notebook
-	@st.fragment
-	def download_notebook():
-		st.download_button(
-			label='Download notebook', data=nb,
-			file_name='COVID Pandemic Analysis.ipynb',
-			icon=':material/download:'
-		)
-	download_notebook()
+	st.download_button(
+		label='Download notebook', data=nb,
+		file_name='COVID Pandemic Analysis.ipynb',
+		icon=':material/download:',
+		on_click='ignore'
+	)
 
 
 # Dashboard tab
@@ -348,3 +346,7 @@ with (dashboard):
 		)
 		st.plotly_chart(fig_scatter, use_container_width=True)
 	show_scatter_plot()
+	
+	# Add date range information
+	date_range = f"{df['date'].min().strftime('%B, %Y')} - {df['date'].max().strftime('%B, %Y')}"
+	st.info(f"Data period is limited to {date_range}", icon=':material/info:', width=400)
