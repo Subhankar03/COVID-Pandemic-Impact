@@ -18,12 +18,16 @@ st.set_page_config(
 # Load custom CSS
 # st.html('style.css')
 st.html('''<style>
+/* Remove header and footer */
+header {visibility: hidden;}
+header {visibility: hidden;}
+
 /* Custom header background with gradient */
 .stApp::before {
     content: "";
     display: block;
     height: 300px;
-    background: linear-gradient(to bottom, hsla(20, 75%, 50%, 0.15), hsla(0, 0%, 0%, 0));
+    background: linear-gradient(to bottom, hsla(10, 100%, 50%, 0.15), hsla(0, 0%, 0%, 0));
 }
 
 /* Title styling */
@@ -69,10 +73,25 @@ h1 {
 }
 [data-testid="stMetric"]:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 12px hsla(0, 0%, 100%, 0.2);
+    box-shadow: 0 0 12px hsla(0, 0%, 100%, 0.25);
 }
 [data-testid="stMetricValue"] {
-    font-weight: 700 !important;
+    font-weight: 700;
+}
+
+/* Selectbox and Multiselect styling */
+[data-baseweb="select"] {
+    border-radius: 1.3rem;
+    border: 1px solid hsla(0, 0%, 100%, 0.25);
+    box-shadow: 0 0 10px hsla(0, 0%, 100%, 0.15);
+    transition: 0.3s ease;
+}
+[data-baseweb="select"]:hover {
+    box-shadow: 0 0 12px hsla(0, 0%, 100%, 0.25);
+}
+[data-baseweb="select"]:focus-within {
+    border: 1px solid hsla(20, 100%, 65%);
+    box-shadow: 0 0 12px hsla(18, 100%, 100%, 0.4);
 }
 </style>''')
 
@@ -202,7 +221,8 @@ with (dashboard):
 			color=color_col,
 			color_continuous_scale='Oranges' if "Case" in title else 'Greens' if "Vaccination" in title else 'Reds',
 			title=title, hover_data=hover
-		).update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
+		).update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0},
+						paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 		col1.plotly_chart(fig_map, use_container_width=True)
 		
 		# Top 5 bar chart
@@ -212,7 +232,8 @@ with (dashboard):
 			title=f"Top 5 Countries by {map_metric}",
 			labels={color_col: map_metric, 'location': 'Country'},
 			color=color_col, color_continuous_scale='Oranges' if "Case" in title else 'Greens' if "Vaccination" in title else 'Reds'
-		).update_layout(yaxis_title=map_metric, margin=dict(t=40), coloraxis_showscale=False)
+		).update_layout(yaxis_title=map_metric, margin=dict(t=40), coloraxis_showscale=False,
+						paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 		col2.plotly_chart(fig_bar, use_container_width=True)
 	show_map()
 	
@@ -287,7 +308,7 @@ with (dashboard):
 		fig_ts = px.line(
 			time_series, x='date', y=y_column, color='location', title=title,
 			labels={'date': 'Date', y_column: y_title, 'location': 'Country'}
-		)
+		).update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 		col1.plotly_chart(fig_ts, use_container_width=True)
 	
 		# Mortality analysis section
@@ -343,7 +364,7 @@ with (dashboard):
 				'mortality_rate': 'Mortality Rate (%)',
 				'deaths_per_million': 'Deaths per Million'
 			}
-		)
+		).update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 		if selected_countries:
 			# Highlight selected countries on the plot
 			for country in selected_countries:
@@ -406,7 +427,7 @@ with (dashboard):
 				'continent': 'Continent',
 				'population': 'Population'
 			}
-		)
+		).update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 		st.plotly_chart(fig_scatter, use_container_width=True)
 	show_scatter_plot()
 	
