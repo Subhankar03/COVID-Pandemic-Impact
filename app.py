@@ -14,7 +14,70 @@ st.set_page_config(
 	page_icon='virus.png',
 	layout='wide'
 )
-col1, col2 = st.columns((.06, .94), vertical_alignment='bottom')
+
+# Load custom CSS
+# st.html('style.css')
+st.html('''<style>
+/* Custom header background with gradient */
+.stApp::before {
+    content: "";
+    display: block;
+    height: 300px;
+    background: linear-gradient(to bottom, hsla(20, 75%, 50%, 0.15), hsla(0, 0%, 0%, 0));
+}
+
+/* Title styling */
+h1 {
+    margin-bottom: 1rem !important;
+    background: linear-gradient(90deg, hsl(20, 100%, 65%), hsla(0, 100%, 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Tabs styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0px;
+    margin-bottom: .5rem;
+    overflow: visible;
+}
+.stTabs [data-baseweb="tab"] {
+    padding: 1rem;
+    border-radius: 1.3rem !important;
+    transition: 0.3s ease;
+}
+.stTabs [aria-selected="true"] {
+    color: white;
+    z-index: 2;
+}
+.stTabs [data-baseweb="tab"]:not([aria-selected="true"]):hover {
+    background: #2D2933;
+}
+.stTabs [data-baseweb="tab-highlight"] {
+    height: 95%;
+    margin-bottom: 2px;
+    border-radius: 1.3rem !important;
+    background: linear-gradient(135deg, hsl(20, 100%, 65%), hsla(0, 100%, 65%));
+    transition: all 0.3s ease;
+}
+
+/* Cards styling */
+[data-testid="stMetric"] {
+    background-color: #2D2933;
+    box-shadow: 0 0 10px hsla(0, 0%, 100%, 0.15);
+    transition: all 0.3s ease;
+}
+[data-testid="stMetric"]:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px hsla(0, 0%, 100%, 0.2);
+}
+[data-testid="stMetricValue"] {
+    font-weight: 700 !important;
+}
+</style>''')
+
+# Title and icon
+col1, col2 = st.columns((.06, .94), vertical_alignment='center')
 col1.image('virus.png', width=64)
 col2.title('COVID-19 Pandemic Impact')
 st.write('')
