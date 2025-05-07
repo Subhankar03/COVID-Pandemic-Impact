@@ -1,6 +1,7 @@
+millify
+nbconvert
 numpy
 pandas
 plotly
 streamlit
-millify
-nbconvert
+streamlit-lottie
