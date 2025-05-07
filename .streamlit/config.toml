@@ -1,0 +1,6 @@
+[theme]
+base = "dark"
+primaryColor = "#FF814B"
+backgroundColor = "#121212"
+secondaryBackgroundColor = "#FFFFFF14"
+baseRadius = "full"

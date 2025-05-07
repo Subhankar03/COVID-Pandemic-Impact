@@ -1,5 +1,4 @@
 .idea
 .venv
-.streamlit
 pyproject.toml
 uv.lock
