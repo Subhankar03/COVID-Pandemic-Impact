@@ -35,8 +35,8 @@ with open('COVID Pandemic Analysis.ipynb', encoding='utf-8') as f:
 # Load and cache data
 @st.cache_data
 def load_dataset():
-	deaths = pd.read_csv('Dataset/covid_deaths.csv')
-	vaccinations = pd.read_csv('Dataset/covid_vaccinations.csv')
+	deaths = pd.read_csv('dataset/covid_deaths.csv')
+	vaccinations = pd.read_csv('dataset/covid_vaccinations.csv')
 	data = pd.concat([deaths, vaccinations.drop(columns=['iso_code', 'continent', 'location', 'date'])], axis=1)
 	data = data[['continent', 'location', 'date', 'population', 'new_cases', 'total_cases',
 				 'new_vaccinations', 'people_vaccinated', 'hospital_beds_per_thousand',
