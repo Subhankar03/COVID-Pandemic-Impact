@@ -21,7 +21,7 @@ h1 {
 
 /* Tabs styling */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 0px;
+    gap: 0;
     margin-bottom: .5rem;
     overflow: visible;
 }
