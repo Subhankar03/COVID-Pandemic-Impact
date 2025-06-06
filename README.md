@@ -1,62 +1,37 @@
-# COVID-19 Pandemic Impact Analysis Dashboard
+# COVID-19 Pandemic Impact
+
+<img title="Dashboard image" src="dashboard.jpg" alt="Dashboard image">
 
 ## Project Overview
-This interactive dashboard provides comprehensive insights into the global impact of the COVID-19 pandemic, visualizing data on cases, deaths, vaccinations, and healthcare system responses across countries worldwide. The dashboard leverages Streamlit to create an intuitive interface for exploring pandemic trends and patterns.
 
-### Objective
-The primary objectives of this dashboard are to:
-1. Visualize the global spread and impact of COVID-19
-2. Compare pandemic responses and outcomes across different countries
-3. Analyze relationships between various factors like vaccination rates, stringency measures, and mortality
-4. Provide accessible insights for policymakers, researchers, and the general public
+The COVID-19 pandemic has had a profound impact on the world. This project aims to understand and visualize this impact by analyzing a comprehensive dataset from [Our World In Data](https://ourworldindata.org) that covers various aspects of the pandemic, including cases, deaths, vaccinations, and other health-related metrics. The analysis is presented through an interactive dashboard, allowing users to explore the data and gain insights into the pandemic's progression and effects.
+
+## Objective
+
+The main objectives of this project are:
+
+* To perform a thorough exploratory data analysis (EDA) to uncover trends, patterns, and relationships within the COVID-19 dataset.
+* To identify key metrics and insights related to the pandemic, such as infection rates, mortality rates, and vaccination progress across different countries and continents.
+* To develop an interactive and visually appealing dashboard that allows users to explore the data dynamically.
+* To provide a clear and concise summary of the findings from the analysis.
 
 ## Methodology
 
-### Data Sources
-This analysis uses two primary datasets:
-- **COVID Deaths Dataset**: Contains information about COVID-19 cases, deaths, hospitalization data, and population metrics
-- **COVID Vaccinations Dataset**: Contains vaccination data and other policy response metrics
+The project involved two main steps. First, an exploratory data analysis (EDA) was performed in a Jupyter Notebook using Python, and `duckdb`. The dataset was cleaned, and SQL queries were used to analyze global, continental, and country-level data on cases, deaths, and vaccinations.
 
-These datasets track the pandemic from its early stages through recent periods, providing a comprehensive view of the global health crisis.
+Second, an interactive dashboard was built with Streamlit and Plotly to visualize these findings. The dashboard features global stats, a choropleth map, time-series charts, and scatter plots to allow users to dynamically explore the pandemic's impact.
 
-### Analysis Approach
-The dashboard implements several analytical methods:
-1. **Time Series Analysis**: Tracking the progression of cases, deaths, and vaccinations over time
-2. **Geospatial Visualization**: Mapping the pandemic's global impact with choropleth visualizations
-3. **Comparative Analysis**: Exploring relationships between different pandemic metrics
-4. **Statistical Analysis**: Calculating key metrics like mortality rates and vaccination coverage
+## Key Takeaways
 
-### Tools Used
-- **Python**: Core programming language
-- **Pandas**: Data manipulation and analysis
-- **Plotly**: Interactive data visualization
-- **Streamlit**: Dashboard framework
-- **Jupyter Notebook**: Initial exploratory data analysis
+The analysis of the COVID-19 dataset revealed several key insights:
 
-## Key Findings
+* **Global Impact:** The pandemic resulted in over 151 million cases and 3 million deaths globally within the analyzed period.
+* **Country-Specific Analysis:** Countries like the United States, Brazil, and India were among the most affected in terms of total cases and deaths.
+* **Mortality Rates:** The mortality rate varied significantly between countries, with Mexico showing a notably high death percentage among confirmed cases.
+* **Continental Differences:** Europe and North America had the highest total death counts among the continents.
+* **Vaccination Progress:** The dashboard tracks the cumulative number of vaccinations, showing the progress of vaccination campaigns in different countries.
+* **Healthcare System Strain:** The analysis of hospital capacity versus patient numbers highlights the strain on healthcare systems, with countries like Spain and the UK showing significant hospital strain percentages.
 
-### Global Impact
-- The pandemic affected every continent, with varying degrees of severity
-- Significant disparities exist in case rates, vaccination coverage, and mortality between countries
-- Population density and healthcare capacity correlate strongly with pandemic outcomes
+## Conclusion
 
-### Policy Effectiveness
-- Countries with higher stringency index values generally showed better containment of case growth
-- Early implementation of strict measures correlated with lower overall mortality
-- Vaccination campaigns demonstrably reduced mortality rates in countries with high coverage
-
-### Healthcare System Factors
-- Hospital bed capacity per thousand population was a significant factor in mortality outcomes
-- Healthcare system resilience varied dramatically between developed and developing economies
-- Resource allocation strategies significantly impacted patient outcomes
-
-## Conclusions
-The COVID-19 pandemic revealed critical insights about global health security, healthcare system capacity, and the importance of coordinated international response. This dashboard illustrates how data-driven approaches can help us understand complex health crises and potentially inform future pandemic preparedness.
-
-The analysis demonstrates that while the virus affected all nations, outcomes varied dramatically based on healthcare infrastructure, policy decisions, and vaccination strategies. These insights may help guide future public health policy and pandemic response planning.
-
-## Usage Instructions
-1. Use the filters in the sidebar to select specific countries and date ranges
-2. Navigate between the Overview, Dashboard, and Notebook tabs to explore different aspects of the data
-3. Interact with the visualizations by hovering, clicking, or using the dropdown selectors
-4. Download filtered data or the analysis notebook for further exploration
+This project provides a comprehensive analysis of the COVID-19 pandemic, from initial data exploration to the development of a fully interactive dashboard. The findings highlight the vast and varied impact of the pandemic across the globe. The interactive dashboard serves as a powerful tool for visualizing and understanding these complex dynamics, making the data accessible to a wider audience. Through this analysis, we can better comprehend the scale of the pandemic and the factors that influenced its spread and severity.
