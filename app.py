@@ -11,7 +11,7 @@ from streamlit_lottie import st_lottie
 # Page title and configurations
 st.set_page_config(
 	page_title='COVID-19 Pandemic Impact',
-	page_icon='virus.png',
+	page_icon='static/virus.png',
 	layout='wide'
 )
 
@@ -21,7 +21,7 @@ st.html('style.css')
 
 # Title and icon
 col1, col2 = st.columns((.06, .94), vertical_alignment='center')
-col1.image('virus.png', width=64)
+col1.image('static/virus.png', width=64)
 col2.title('COVID-19 Pandemic Impact')
 st.write('')
 

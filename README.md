@@ -1,6 +1,6 @@
 # COVID-19 Pandemic Impact
 
-<img title="Dashboard image" src="dashboard.jpg" alt="Dashboard image">
+<img title="Dashboard image" src="static/dashboard.jpg" alt="Dashboard image">
 
 ## Project Overview
 
