@@ -14,9 +14,6 @@ st.set_page_config(
 	page_icon='static/virus.png',
 	layout='wide'
 )
-
-# Load custom CSS
-# st.html('style.css')
 st.html('style.css')
 
 # Title and icon
