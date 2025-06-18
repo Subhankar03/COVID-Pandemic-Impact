@@ -1,6 +1,5 @@
-/* Remove header and footer */
-header {visibility: hidden}
-footer {visibility: hidden}
+/* Remove header */
+header {display: none !important;}
 
 /* Gradient background */
 .stApp::before {
